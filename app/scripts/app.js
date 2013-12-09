@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('imiJobsApp', [
-  'ngCookies',
-  'ngResource',
+  //'ngCookies',
+  //'ngResource',
   'ngSanitize',
   'ngRoute'
 ])
@@ -16,3 +16,4 @@ angular.module('imiJobsApp', [
         redirectTo: '/'
       });
   });
+
