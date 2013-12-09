@@ -1,4 +1,4 @@
 imi-jobs
 ========
 
-anuglar version of imi-ui
+angular version of imi-ui
