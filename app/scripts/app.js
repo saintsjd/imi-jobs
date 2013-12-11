@@ -6,8 +6,12 @@ angular.module('imiJobsApp', [
   'ngSanitize',
   'ngRoute'
 ])
-  .config(function ($routeProvider) {
+  .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider
+      .when('/login', {
+        templateUrl: 'views/login.html',
+        controller: 'LoginCtrl'
+      })
       .when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
@@ -15,5 +19,7 @@ angular.module('imiJobsApp', [
       .otherwise({
         redirectTo: '/'
       });
-  });
+
+    //$locationProvider.html5Mode(true);    
+  }]);
 
