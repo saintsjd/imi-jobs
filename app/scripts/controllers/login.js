@@ -8,4 +8,8 @@ angular.module('imiJobsApp')
     $scope.password = null;
     $scope.rememberMe = true;
 
+    $scope.login = function(){
+      console.log($scope.email);
+    };
+
   }]);
