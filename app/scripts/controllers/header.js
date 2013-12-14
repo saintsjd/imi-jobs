@@ -3,8 +3,9 @@
 angular.module('imiJobsApp')
   .controller('HeaderCtrl', ['$scope','auth', function ($scope, auth ) {
 
-    if( auth.token ){
+    if( auth.user.token ){
       $scope.loggedIn = true;
+      $scope.email = auth.user.email;
     }else{
       $scope.loggedIn = false;
     }

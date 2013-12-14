@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('imiJobsApp')
-  .controller('LoginCtrl', ['$scope','auth', function ($scope, auth ) {
+  .controller('LoginCtrl', ['$scope','$location','auth', function ($scope,$location,auth ) {
 
     $scope.token = auth.token;
     $scope.email = null;
@@ -9,7 +9,15 @@ angular.module('imiJobsApp')
     $scope.rememberMe = true;
 
     $scope.login = function(){
-      console.log($scope.email);
+
+      if( !$scope.email || !$scope.password ) {
+        $scope.error = 'Email and password fields are required';
+      }else {
+        auth.login($scope.email,$scope.password);
+        $location.path('/');
+      }
+
+
     };
 
   }]);
