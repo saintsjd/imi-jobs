@@ -1,21 +1,23 @@
 'use strict';
 
 angular.module('imiJobsApp')
-  .factory('auth', function() {
+  .factory('auth', function () {
 
-    this.user = {'email':null,'token':null};
-
-    this.login = function(user,password){
-      this.user = { 'email': user, 'token':'TOKEN_HERE'+password };
+    var auth = {
+      user: {'email':null,'token':null},
+      token: null,
+      login: function(user,password){
+        auth.user = { 'email': user, 'token':'TOKEN_HERE'+password };
+        auth.token = 'TOKEN_HERE'+password;
+      },
+      logout: function(){
+        auth.user = null;
+        auth.token = null;
+      },
+      isAuthenticated: function(){
+        return !!auth.token;
+      },
     };
 
-    this.logout = function(){
-      this.user = null;
-    };
-
-    return {
-      user: this.user,
-      login: this.login,
-      logout: this.logout
-    };
+    return auth;
   });

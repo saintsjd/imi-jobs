@@ -3,7 +3,10 @@
 angular.module('imiJobsApp')
   .controller('LoginCtrl', ['$scope','$location','auth', function ($scope,$location,auth ) {
 
-    $scope.token = auth.token;
+    if( auth.token ){
+      $location.path('/');
+    }
+
     $scope.email = null;
     $scope.password = null;
     $scope.rememberMe = true;
