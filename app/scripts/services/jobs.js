@@ -30,8 +30,8 @@ angular.module('imiJobsApp')
 
     return {
       jobs: jobs,
-      getJobs: function() {
-        return jobs;
-      },
+      newJob: function(description) {
+        jobs.push( {description:description, id: jobs.length+1 } );
+      }
     };
   }]);

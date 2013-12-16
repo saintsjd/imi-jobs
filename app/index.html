@@ -63,7 +63,7 @@
               </ul>
             </li>
           </ul>
-          <a ng-if="loggedIn()" data-toggle="modal" href="#newReportModal" class="btn btn-warning navbar-btn navbar-right"><span class="glyphicon glyphicon-plus"></span> Create New Report</a>
+          <!--<a ng-if="loggedIn()" data-toggle="modal" href="#newReportModal" class="btn btn-warning navbar-btn navbar-right"><span class="glyphicon glyphicon-plus"></span> Create New Report</a>-->
         </div><!-- /.navbar-collapse -->
       </div><!-- .container -->
     </nav>
@@ -79,7 +79,7 @@
     </footer>
 
 
-    <div class="modal fade" id="newReportModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal fade" id="newReportModal" tabindex="-1" role="dialog" aria-labelledby="newReportModalLabel" aria-hidden="true" ng-controller="NewReportCtrl">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -90,8 +90,8 @@
 
     <form role="form">
       <div class="form-group">
-        <label for="exampleInputEmail1">Name Your New Report</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="">
+        <label for="reportName">Name Your New Report</label>
+        <input type="text" class="form-control" id="reportName" placeholder="" ng-bind="{{description}}">
         <span class="help-block"><small>Here are some examples of report names: "Product Profile for Northeast Region" or "Abrasives and Cutting Tools Report for Dallas, TX Market"</small></span>
       </div>
     </form>
@@ -100,7 +100,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-              <a href="new.html" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Create New Report</a>
+              <a href="#" class="btn btn-primary" ng-click="newReport()"><span class="glyphicon glyphicon-plus"></span> Create New Report</a>
             </div>
           </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
@@ -156,6 +156,7 @@
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/header.js"></script>
         <script src="scripts/controllers/login.js"></script>
+        <script src="scripts/controllers/newReport.js"></script>
         <!-- endbuild -->
 </body>
 </html>
