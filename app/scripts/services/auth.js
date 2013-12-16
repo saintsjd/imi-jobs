@@ -3,21 +3,21 @@
 angular.module('imiJobsApp')
   .factory('auth', function () {
 
-    var auth = {
-      user: {'email':null,'token':null},
-      token: null,
-      login: function(user,password){
-        auth.user = { 'email': user, 'token':'TOKEN_HERE'+password };
-        auth.token = 'TOKEN_HERE'+password;
+    var user = {'email':null,'token':null};
+
+    return {
+      user: user,
+      login: function(email,password){
+        user.email = email;
+        user.token = 'TOKEN_HERE'+password;
       },
       logout: function(){
-        auth.user = null;
-        auth.token = null;
+        user.email = null;
+        user.token = null;
       },
       isAuthenticated: function(){
-        return !!auth.token;
+        return !!user.token;
       },
     };
 
-    return auth;
   });

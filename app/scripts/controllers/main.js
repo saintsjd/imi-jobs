@@ -3,7 +3,7 @@
 angular.module('imiJobsApp')
   .controller('MainCtrl', ['$scope','$location','auth','jobs', function ($scope, $location, auth, jobs) {
 
-    if( !auth.token ){
+    if( !auth.isAuthenticated() ){
       $location.path('/login');
     }
 
