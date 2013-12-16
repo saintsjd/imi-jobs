@@ -86,7 +86,7 @@ a {
 * HEADER
 */
 .navbar {
-    margin: 0;
+    margin: 0 0 20px 0;
     background-color: #1087bf;
     border: none;
     border-radius: 0;
@@ -114,4 +114,37 @@ footer {
     background-color: #556169;
     color: #eee;
     padding: 30px;
+}
+
+
+/*
+ * My Reports
+ */
+
+a.thumbnail:hover {
+  text-decoration: none;
+  background-color: #eee;
+}
+
+a.my-report {
+  color:  #556169;
+}
+
+.my-report {
+  height: 200px;
+  overflow: hidden;
+}
+
+.new-my-report {
+  background-color: #eee;
+}
+.my-report h5 {
+  font-weight: bold;
+}
+.my-report p {
+  font-size: 0.9em;
+}
+
+.thumbnail .caption {
+  color:  #556169;
 }
