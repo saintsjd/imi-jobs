@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('imiJobsApp')
-  .factory('auth', ['$cookieStore',function ($cookieStore) {
+  .factory('auth', ['$cookieStore','$location',function ($cookieStore,$location) {
 
     var user = $cookieStore.get('user') || {'email':null,'token':null};
 
@@ -16,6 +16,7 @@ angular.module('imiJobsApp')
         user.email = null;
         user.token = null;
         $cookieStore.remove('user',user);
+        $location.path('/#/login');
       },
       isAuthenticated: function(){
         return !!user.token;
