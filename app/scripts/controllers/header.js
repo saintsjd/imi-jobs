@@ -8,6 +8,6 @@ angular.module('imiJobsApp')
         return auth.user;
       }, function(user) {
         $scope.user = user;
-    });
+      });
 
   }]);
