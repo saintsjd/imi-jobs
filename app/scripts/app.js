@@ -8,6 +8,10 @@ angular.module('imiJobsApp', [
 ])
   .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider
+      .when('/reports/:reportId', {
+        templateUrl: 'views/report.html',
+        controller: 'ReportCtrl'
+      })
       .when('/login', {
         templateUrl: 'views/login.html',
         controller: 'LoginCtrl'

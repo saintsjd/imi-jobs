@@ -6,19 +6,19 @@ angular.module('imiJobsApp')
     var jobs = [];
 
     $timeout( function(){
-      jobs.push(
+      jobs.unshift(
         {
           id: 1,
           description:'North Dakota Expansion'
         }
       );
-      jobs.push(
+      jobs.unshift(
         {
           id: 2,
           description:'Chicago Prospect List'
         }
       );
-      jobs.push(
+      jobs.unshift(
         {
           id: 3,
           description:'Future Branch Locations'
@@ -30,7 +30,8 @@ angular.module('imiJobsApp')
     return {
       jobs: jobs,
       newJob: function(description) {
-        jobs.push( {description:description, id: jobs.length+1 } );
+        jobs.unshift( {description:description, id: jobs.length+1 } );
+        return jobs[0];
       }
     };
   }]);
