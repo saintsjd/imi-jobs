@@ -5,9 +5,9 @@ angular.module('imiJobsApp')
 
     $scope.description = null;
 
-    $scope.newReport = function(){
-      console.log(jobs.jobs);
-      if( $scope.description ){
+    $scope.newReport = function(description){
+      console.log(description);
+      if( description ){
         jobs.newJob($scope.description);
         return true;
       }

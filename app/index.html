@@ -91,7 +91,7 @@
     <form role="form">
       <div class="form-group">
         <label for="reportName">Name Your New Report</label>
-        <input type="text" class="form-control" id="reportName" placeholder="" ng-bind="{{description}}">
+        <input type="text" class="form-control" id="reportName" placeholder=""  ng-model="description">
         <span class="help-block"><small>Here are some examples of report names: "Product Profile for Northeast Region" or "Abrasives and Cutting Tools Report for Dallas, TX Market"</small></span>
       </div>
     </form>
@@ -100,7 +100,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-              <a href="#" class="btn btn-primary" ng-click="newReport()"><span class="glyphicon glyphicon-plus"></span> Create New Report</a>
+              <a href="#" class="btn btn-primary" ng-click="newReport(description)"><span class="glyphicon glyphicon-plus"></span> Create New Report</a>
             </div>
           </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->

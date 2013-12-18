@@ -5,7 +5,7 @@ angular.module('imiJobsApp')
 
     var jobs = [];
 
-    /*$timeout( function(){
+    $timeout( function(){
       jobs.push(
         {
           id: 1,
@@ -24,8 +24,7 @@ angular.module('imiJobsApp')
           description:'Future Branch Locations'
         }
       );
-      console.log(jobs);
-    }, 8000);*/
+    }, 4000);
 
 
     return {
