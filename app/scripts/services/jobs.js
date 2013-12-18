@@ -25,7 +25,7 @@ angular.module('imiJobsApp')
         }
       );
       console.log(jobs);
-    }, 4000);*/
+    }, 8000);*/
 
 
     return {
